@@ -1,10 +1,21 @@
-
+import { Provider } from 'react-redux';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
+import AdministrarConsorcios from './pages/administrarConsorcios/AdministrarConsorcios';
+import { store } from './redux/store';
 
 function App() {
   return (
-    <div>
-      <h1>Facturascissson AFIP</h1>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route path="administraciones" element={<AdministrarConsorcios />} />
+            {/* Aquí irán las demás rutas */}
+          </Route>
+        </Routes>
+      </Router>
+    </Provider>
   );
 }
 
