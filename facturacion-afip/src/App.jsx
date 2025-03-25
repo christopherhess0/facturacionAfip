@@ -1,40 +1,26 @@
 import React from 'react';
-import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import ProtectedRoute from './components/ProtectedRoute';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import AdministrarConsorcios from './pages/administrarConsorcios/AdministrarConsorcios';
+import Inicio from './pages/inicio/Inicio';
 import Login from './pages/login/Login';
 import NotFound from './pages/notFound/NotFound';
+import Trabajos from './pages/trabajos/Trabajos';
 
-const App = () => {
+function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <MainLayout>
-                <Navigate to="/administraciones" replace />
-              </MainLayout>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/administraciones"
-          element={
-            <ProtectedRoute>
-              <MainLayout>
-                <AdministrarConsorcios />
-              </MainLayout>
-            </ProtectedRoute>
-          }
-        />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Inicio />} />
+          <Route path="login" element={<Login />} />
+          <Route path="administrar-edificios" element={<AdministrarConsorcios />} />
+          <Route path="trabajos" element={<Trabajos />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </Router>
   );
-};
+}
 
 export default App; 
