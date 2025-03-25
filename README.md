@@ -1,84 +1,101 @@
-# Sistema de Facturación AFIP
+# Sistema de Facturación AFIP 📊
 
-¡Hola! 👋 Este es mi primer proyecto grande usando React y Node.js. Es un sistema que desarrollé para ayudar con la gestión de edificios y la facturación AFIP.
+Mi primer proyecto fullstack como estudiante. Un sistema de gestión y facturación para administradores de consorcios.
 
-## 🚀 ¿Qué hace este proyecto?
+## 🚀 Características
 
-Este sistema me ayudó a aprender cómo:
-- Crear un CRUD completo en React
-- Trabajar con MongoDB
-- Integrar APIs externas (Google Sheets y AFIP)
-- Manejar autenticación y sesiones
-- Implementar una interfaz moderna con Material-UI
+- Gestión de edificios y consorcios
+- Importación de datos desde Google Sheets
+- Sistema de facturación integrado con AFIP
+- Interfaz moderna y fácil de usar
+- Base de datos MongoDB para almacenamiento persistente
 
-## 💻 Tecnologías que usé
+## 📋 Requisitos Previos
 
-- Frontend:
-  - React
-  - Redux para el manejo de estado
-  - Material-UI para los componentes
-  - Styled-components para los estilos
+- Node.js (v14 o superior)
+- MongoDB (v4.4 o superior)
+- Cuenta de Google Cloud Platform (para importación desde Sheets)
+- Cuenta de AFIP (para facturación)
 
-- Backend:
-  - Node.js con Express
-  - MongoDB para la base de datos
-  - Google Sheets API para importación de datos
+## 🔧 Instalación
 
-## 🛠️ Instalación
+1. **Clonar el repositorio**
+   ```bash
+   git clone https://github.com/christopherhess0/facturacionAfip.git
+   cd facturacionAfip
+   ```
 
-Si querés probar el proyecto, seguí estos pasos:
+2. **Instalar dependencias**
+   ```bash
+   npm install
+   ```
 
-1. Cloná el repo
-```bash
-git clone https://github.com/christopherhess0/facturacionAfipProyectov2.git
-cd facturacionAfipProyectov2
-```
+3. **Configurar variables de entorno**
+   - Crear archivo `.env` en la raíz del proyecto:
+   ```
+   MONGODB_URI=mongodb://127.0.0.1:27017/facturacion
+   REACT_APP_API_URL=http://localhost:3001
+   GOOGLE_SHEET_ID=tu_id_de_google_sheets
+   ```
 
-2. Instalá las dependencias
-```bash
-npm install
-```
+4. **Configurar credenciales de Google**
+   - Crear archivo `src/server/credentials.json` con las credenciales de Google Cloud
+   - Este archivo se obtiene de la consola de Google Cloud Platform
 
-3. Configurá las variables de entorno
-Creá un archivo `.env` con:
-```
-MONGODB_URI=mongodb://127.0.0.1:27017/facturacion
-GOOGLE_SHEET_ID=tu-id-de-hoja-de-calculo
-PORT=3001
-```
+5. **Configurar MongoDB**
+   - Asegurarse que MongoDB esté instalado y corriendo en `localhost:27017`
+   - Los datos se restaurarán automáticamente desde la carpeta de backups
 
-4. Ejecutá el proyecto
-```bash
-npm run dev
-```
+6. **Iniciar el proyecto**
+   ```bash
+   npm run dev
+   ```
+   - Frontend: http://localhost:3000
+   - Backend: http://localhost:3001
 
-## 📸 Capturas
+## 💾 Respaldo de Datos
 
-[Próximamente agregaré algunas capturas del sistema en funcionamiento]
+- Los backups se almacenan en `src/server/backups/`
+- Para restaurar datos en una nueva instalación:
+  1. Copiar los archivos de backup a la carpeta `src/server/backups/`
+  2. Los datos se restaurarán automáticamente al iniciar el servidor
 
-## 🌱 Lo que aprendí
+## 🔒 Archivos Sensibles
 
-Este proyecto me ayudó a entender mejor:
-- Cómo estructurar una aplicación full-stack
-- La importancia del manejo de estados en React
-- Cómo trabajar con bases de datos NoSQL
-- El manejo de errores y validaciones
-- La importancia de la seguridad en aplicaciones web
+Los siguientes archivos no están incluidos en el repositorio por seguridad:
+- `.env`
+- `src/server/credentials.json`
+- Archivos de backup
 
-## 🚧 Próximas mejoras
+Debes configurarlos manualmente en cada nueva instalación.
 
-Tengo pensado agregar:
-- [ ] Más validaciones en los formularios
-- [ ] Exportación a Excel
-- [ ] Gráficos y estadísticas
-- [ ] Mejoras en el diseño móvil
-- [ ] Tests automatizados
+## 🛠️ Tecnologías Utilizadas
 
-## 📫 Contacto
+- Frontend: React, Material-UI, Redux
+- Backend: Node.js, Express
+- Base de datos: MongoDB
+- APIs: Google Sheets, AFIP
 
-Si tenés sugerencias o querés contactarme:
+## 📈 Mejoras Planificadas
+
+- [ ] Sistema de autenticación mejorado
+- [ ] Más opciones de personalización de facturas
+- [ ] Reportes y estadísticas avanzadas
+- [ ] Interfaz móvil optimizada
+
+## 📞 Contacto
+
 - LinkedIn: [Christopher Hess](https://www.linkedin.com/in/christopher-hess-818738209/)
 - Email: [Próximamente]
+
+## 🤝 Contribuciones
+
+Este es un proyecto personal de aprendizaje, pero las sugerencias son bienvenidas. Siéntete libre de:
+1. Hacer fork del proyecto
+2. Crear una rama para tu feature
+3. Hacer commit de tus cambios
+4. Hacer push a la rama
+5. Abrir un Pull Request
 
 ---
 ⭐️ ¡Si te gustó el proyecto, no dudes en darle una estrella!
