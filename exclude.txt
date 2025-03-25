@@ -1,0 +1,9 @@
+.git
+.git\*
+node_modules
+node_modules\*
+src\server\credentials.json
+.env
+.env.*
+src\server\backups
+src\server\backups\* 
